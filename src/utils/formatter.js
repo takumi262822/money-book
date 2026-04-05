@@ -1,3 +1,8 @@
+﻿/**
+ * Date and amount format utility class
+ * @author Takumi Harada
+ * @date 2026/3/31
+ */
 // 数値を日本円の通貨表記にフォーマットする（¥ + 千区切り整数）
 export function formatCurrency(amount) {
   return `¥${new Intl.NumberFormat('ja-JP').format(amount)}`;

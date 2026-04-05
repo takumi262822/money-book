@@ -1,3 +1,8 @@
+﻿/**
+ * Application-wide constants (storage keys, allowed paths, etc.)
+ * @author Takumi Harada
+ * @date 2026/3/31
+ */
 // 収入カテゴリ一覧
 export const INCOME_CATEGORIES = ['給与', 'ボーナス', '副収入', '投資', 'その他収入'];
 

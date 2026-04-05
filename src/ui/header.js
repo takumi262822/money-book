@@ -1,3 +1,8 @@
+﻿/**
+ * Page common header rendering class
+ * @author Takumi Harada
+ * @date 2026/3/31
+ */
 import { formatYearMonth } from '../utils/formatter.js';
 
 // ヘッダー HTML（ロゴ + 月ナビゲーション）を生成して返す

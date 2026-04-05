@@ -1,3 +1,8 @@
+﻿/**
+ * Input validation utility class
+ * @author Takumi Harada
+ * @date 2026/3/31
+ */
 import { INCOME_CATEGORIES, EXPENSE_CATEGORIES, RECORD_TYPES } from '../constants/app-constants.js';
 import { ERROR_CODES } from '../constants/code-definitions.js';
 

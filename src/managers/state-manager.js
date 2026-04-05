@@ -1,3 +1,8 @@
+﻿/**
+ * Game state (start/playing/gameover) management class
+ * @author Takumi Harada
+ * @date 2026/3/31
+ */
 import { getCurrentYearMonth } from '../utils/formatter.js';
 import { MODAL_STATE } from '../constants/code-definitions.js';
 

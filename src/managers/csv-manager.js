@@ -1,3 +1,8 @@
+﻿/**
+ * CSV export and import processing class
+ * @author Takumi Harada
+ * @date 2026/3/31
+ */
 import { CSV_HEADERS } from '../constants/app-constants.js';
 
 // 収支レコード配列を UTF-8 BOM 付き CSV としてダウンロードさせる

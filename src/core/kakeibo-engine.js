@@ -1,3 +1,8 @@
+﻿/**
+ * Household account book core logic class
+ * @author Takumi Harada
+ * @date 2026/3/31
+ */
 import { StorageManager }  from '../managers/storage-manager.js';
 import { StateManager }    from '../managers/state-manager.js';
 import { ChartManager }    from '../managers/chart-manager.js';

@@ -1,3 +1,8 @@
+﻿/**
+ * Chart rendering and chart data generation class
+ * @author Takumi Harada
+ * @date 2026/3/31
+ */
 /* global Chart */
 
 // Chart.js を使って支出カテゴリのドーナツチャートを描画する

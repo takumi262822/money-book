@@ -1,3 +1,8 @@
+﻿/**
+ * Code and name mapping definitions
+ * @author Takumi Harada
+ * @date 2026/3/31
+ */
 // モーダルの表示状態コード
 export const MODAL_STATE = {
   CLOSED: 'closed',

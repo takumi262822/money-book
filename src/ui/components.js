@@ -1,3 +1,8 @@
+﻿/**
+ * UI component rendering class
+ * @author Takumi Harada
+ * @date 2026/3/31
+ */
 import { escapeHtml } from '../utils/xss.js';
 import { formatCurrency, formatDateShort } from '../utils/formatter.js';
 import { INCOME_CATEGORIES, EXPENSE_CATEGORIES } from '../constants/app-constants.js';

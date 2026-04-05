@@ -1,3 +1,8 @@
+﻿/**
+ * localStorage data save and load class
+ * @author Takumi Harada
+ * @date 2026/3/31
+ */
 import { STORAGE_KEYS } from '../constants/app-constants.js';
 
 // LocalStorage への読み書きを一元管理する

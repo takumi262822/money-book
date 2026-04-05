@@ -1,3 +1,8 @@
+﻿/**
+ * Budget calculation and balance management service class
+ * @author Takumi Harada
+ * @date 2026/3/31
+ */
 import { RECORD_TYPES } from '../constants/app-constants.js';
 import { validateRecord } from '../utils/validator.js';
 
