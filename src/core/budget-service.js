@@ -19,15 +19,24 @@ export class BudgetService {
   // レコードを追加し、生成した ID を返す
   addRecord(data) {
     const errors = validateRecord(data);
+    // バリデーションエラーは throw する。呼び元の KakeiboEngine 側で catch して表示する
     if (errors.length > 0) throw new Error(errors.join(','));
 
     const records = this.storage.getRecords();
     const record = {
+      // Date.now() だけだと同一ミリ秒に追加したとき虫がるので乱数 6 桁を末尾に付ける
       id:        `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
       date:      data.date,
       type:      data.type,
       category:  data.category,
       amount:    Number(data.amount),
+      memo:      data.memo || '',
+      createdAt: new Date().toISOString(),
+    };
+    records.push(record);
+    this.storage.saveRecords(records);
+    return record.id;
+  }
       memo:      data.memo || '',
       createdAt: new Date().toISOString(),
     };
@@ -82,6 +91,7 @@ export class BudgetService {
   }
 
   // 指定月の支出をカテゴリ別に集計したオブジェクトを返す
+  // reduce で一発局配。 acc[カテゴリ] がなければ 0 から始める
   getExpenseByCategory(yearMonth) {
     return this.getRecordsByMonth(yearMonth)
       .filter(r => r.type === RECORD_TYPES.EXPENSE)

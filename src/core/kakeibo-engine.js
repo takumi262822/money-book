@@ -40,6 +40,7 @@ export class KakeiboEngine {
   }
 
   // クリック・変更・送信イベントをまとめて委譲する
+  // ボタンごとに addEventListener を書くと動的生成した要素に対応できないため委譲パターンにしている
   _bindEvents() {
     document.addEventListener('click', (e) => {
       const t = e.target;
@@ -51,6 +52,7 @@ export class KakeiboEngine {
       else if (t.id === 'delete-btn')                         { this._deleteRecord(); }
       else if (t.id === 'csv-export-btn')                     { this._exportCsv(); }
       else {
+        // 一覧アイテムのどこをクリックしても編集モーダルが開くように closest で拾う
         const item = t.closest('.record-item');
         if (item) this._openEditModal(item.dataset.id);
       }
@@ -206,6 +208,7 @@ export class KakeiboEngine {
       this._closeModal();
       this._refresh();
     } catch {
+      // BudgetService 側でバリデーションエラーを throw している。ここで catch して UI にフィードバック
       const errEl = document.getElementById('form-error');
       errEl.textContent = '入力値を確認してください';
       errEl.hidden = false;
