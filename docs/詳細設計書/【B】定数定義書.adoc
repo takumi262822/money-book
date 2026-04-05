@@ -28,18 +28,18 @@
 |===
 ^.^|No. ^.^|定数名（論理名） ^.^|定数名（物理名） ^.^|型 ^.^|設定値 ^.^|備考
 
-^.^|{counter:定数} <.^|収入カテゴリ一覧 <.^|INCOME_CATEGORIES <.^|文字型[] <.^|['給与', 'ボーナス', '副収入', '投資', 'その他収入'] <.^|収入カテゴリ一覧。カテゴリ選択肢とバリデーションに使用する
-^.^|{counter:定数} <.^|支出カテゴリ一覧 <.^|EXPENSE_CATEGORIES <.^|文字型[] <.^|['食費', '交通費', '光熱費', '通信費', '娯楽', '医療', '衣類', '日用品', 'その他支出'] <.^|支出カテゴリ一覧。カテゴリ選択肢とバリデーションに使用する
-^.^|{counter:定数} <.^|収支レコードストレージキー <.^|STORAGE_KEYS.RECORDS <.^|文字型 <.^|'moneybook_records' <.^|収支レコード配列を保存する localStorage キー
-^.^|{counter:定数} <.^|予算設定ストレージキー <.^|STORAGE_KEYS.BUDGETS <.^|文字型 <.^|'moneybook_budgets' <.^|予算設定オブジェクトを保存する localStorage キー
-^.^|{counter:定数} <.^|CSVエクスポートヘッダー <.^|CSV_HEADERS <.^|文字型[] <.^|['日付', '種別', 'カテゴリ', '金額', 'メモ'] <.^|CSV エクスポート時のヘッダー行
-^.^|{counter:定数} <.^|収入種別コード <.^|RECORD_TYPES.INCOME <.^|文字型 <.^|'income' <.^|収入レコードの種別識別子
-^.^|{counter:定数} <.^|支出種別コード <.^|RECORD_TYPES.EXPENSE <.^|文字型 <.^|'expense' <.^|支出レコードの種別識別子
-^.^|{counter:定数} <.^|モーダル非表示コード <.^|MODAL_STATE.CLOSED <.^|文字型 <.^|'closed' <.^|モーダル非表示状態コード
-^.^|{counter:定数} <.^|追加モーダルコード <.^|MODAL_STATE.ADD <.^|文字型 <.^|'add' <.^|追加モーダル表示中の状態コード
-^.^|{counter:定数} <.^|編集モーダルコード <.^|MODAL_STATE.EDIT <.^|文字型 <.^|'edit' <.^|編集モーダル表示中の状態コード
-^.^|{counter:定数} <.^|金額不正エラーコード <.^|ERROR_CODES.INVALID_AMOUNT <.^|文字型 <.^|'INVALID_AMOUNT' <.^|金額が正の整数でない、または未入力
-^.^|{counter:定数} <.^|日付不正エラーコード <.^|ERROR_CODES.INVALID_DATE <.^|文字型 <.^|'INVALID_DATE' <.^|日付が YYYY-MM-DD 形式でない、または未入力
-^.^|{counter:定数} <.^|カテゴリ未選択エラーコード <.^|ERROR_CODES.MISSING_CATEGORY <.^|文字型 <.^|'MISSING_CATEGORY' <.^|カテゴリが候補リストに含まれない、または未選択
-^.^|{counter:定数} <.^|種別不正エラーコード <.^|ERROR_CODES.INVALID_TYPE <.^|文字型 <.^|'INVALID_TYPE' <.^|種別が income / expense 以外
+^.^|{counter:定数} <.^|収入カテゴリ一覧 <.^|INCOME_CATEGORIES <.^|string[] <.^|['給与', 'ボーナス', '副収入', '投資', 'その他収入'] <.^|収入カテゴリ一覧。カテゴリ選択肢とバリデーションに使用する
+^.^|{counter:定数} <.^|支出カテゴリ一覧 <.^|EXPENSE_CATEGORIES <.^|string[] <.^|['食費', '交通費', '光熱費', '通信費', '娯楽', '医療', '衣類', '日用品', 'その他支出'] <.^|支出カテゴリ一覧。カテゴリ選択肢とバリデーションに使用する
+^.^|{counter:定数} <.^|収支レコードストレージキー <.^|STORAGE_KEYS.RECORDS <.^|string <.^|'moneybook_records' <.^|収支レコード配列を保存する localStorage キー
+^.^|{counter:定数} <.^|予算設定ストレージキー <.^|STORAGE_KEYS.BUDGETS <.^|string <.^|'moneybook_budgets' <.^|予算設定オブジェクトを保存する localStorage キー
+^.^|{counter:定数} <.^|CSVエクスポートヘッダー <.^|CSV_HEADERS <.^|string[] <.^|['日付', '種別', 'カテゴリ', '金額', 'メモ'] <.^|CSV エクスポート時のヘッダー行
+^.^|{counter:定数} <.^|収入種別コード <.^|RECORD_TYPES.INCOME <.^|string <.^|'income' <.^|収入レコードの種別識別子
+^.^|{counter:定数} <.^|支出種別コード <.^|RECORD_TYPES.EXPENSE <.^|string <.^|'expense' <.^|支出レコードの種別識別子
+^.^|{counter:定数} <.^|モーダル非表示コード <.^|MODAL_STATE.CLOSED <.^|string <.^|'closed' <.^|モーダル非表示状態コード
+^.^|{counter:定数} <.^|追加モーダルコード <.^|MODAL_STATE.ADD <.^|string <.^|'add' <.^|追加モーダル表示中の状態コード
+^.^|{counter:定数} <.^|編集モーダルコード <.^|MODAL_STATE.EDIT <.^|string <.^|'edit' <.^|編集モーダル表示中の状態コード
+^.^|{counter:定数} <.^|金額不正エラーコード <.^|ERROR_CODES.INVALID_AMOUNT <.^|string <.^|'INVALID_AMOUNT' <.^|金額が正の整数でない、または未入力
+^.^|{counter:定数} <.^|日付不正エラーコード <.^|ERROR_CODES.INVALID_DATE <.^|string <.^|'INVALID_DATE' <.^|日付が YYYY-MM-DD 形式でない、または未入力
+^.^|{counter:定数} <.^|カテゴリ未選択エラーコード <.^|ERROR_CODES.MISSING_CATEGORY <.^|string <.^|'MISSING_CATEGORY' <.^|カテゴリが候補リストに含まれない、または未選択
+^.^|{counter:定数} <.^|種別不正エラーコード <.^|ERROR_CODES.INVALID_TYPE <.^|string <.^|'INVALID_TYPE' <.^|種別が income / expense 以外
 |===
