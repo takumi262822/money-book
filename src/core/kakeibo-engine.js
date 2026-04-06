@@ -44,6 +44,7 @@ export class KakeiboEngine {
   _bindEvents() {
     document.addEventListener('click', (e) => {
       const t = e.target;
+      // クリックされた要素の id ・ classList を照合して対応するメソッドを振り分ける
       if (t.id === 'prev-month-btn')                          { this._prevMonth(); }
       else if (t.id === 'next-month-btn')                     { this._nextMonth(); }
       else if (t.id === 'add-btn')                            { this._openAddModal(); }
@@ -109,6 +110,7 @@ export class KakeiboEngine {
     const list  = document.getElementById('records-list');
     const empty = document.getElementById('records-empty');
 
+    // レコードが0件の場合は空状態メッセージを表示して早期リターンする
     if (records.length === 0) {
       list.innerHTML = '';
       list.appendChild(empty);
@@ -123,6 +125,7 @@ export class KakeiboEngine {
   // 支出カテゴリのドーナツチャートを描画する
   _renderChart(categoryData) {
     const chartEmpty = document.getElementById('chart-empty');
+    // チャートデータが空の場合は空状態表示に切り替えてチャートを破棄する
     if (Object.keys(categoryData).length === 0) {
       chartEmpty.hidden = false;
       this.chart.destroy();
@@ -158,6 +161,7 @@ export class KakeiboEngine {
   // 編集対象レコードの値をフォームに設定してモーダルを開く
   _openEditModal(id) {
     const record = this.storage.getRecords().find(r => r.id === id);
+    // 指定 ID のレコードが見つからない場合は処理を中断する
     if (!record) return;
 
     this.state.modalState      = MODAL_STATE.EDIT;
@@ -200,6 +204,7 @@ export class KakeiboEngine {
     };
 
     try {
+      // モーダルが追加モードか編集モードかに応じて実行するメソッドを切り替える
       if (this.state.modalState === MODAL_STATE.ADD) {
         this.service.addRecord(data);
       } else {
@@ -217,7 +222,9 @@ export class KakeiboEngine {
 
   // 編集中レコードを削除してビューを更新する
   _deleteRecord() {
+    // 編集対象 ID が未設定の場合は処理を中断する
     if (!this.state.editingRecordId) return;
+    // 削除確認ダイアログでキャンセルされた場合は処理を中断する
     if (!confirm('このレコードを削除しますか？')) return;
     this.service.deleteRecord(this.state.editingRecordId);
     this._closeModal();

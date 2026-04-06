@@ -10,6 +10,7 @@ export function formatCurrency(amount) {
 
 // YYYY-MM-DD を M/D の短縮表記に変換する
 export function formatDateShort(dateStr) {
+  // 日付文字列が空または null の場合は空文字を返す
   if (!dateStr) return '';
   const [, month, day] = dateStr.split('-');
   return `${parseInt(month, 10)}/${parseInt(day, 10)}`;
@@ -17,6 +18,7 @@ export function formatDateShort(dateStr) {
 
 // YYYY-MM を YYYY年M月 の日本語表記に変換する
 export function formatYearMonth(yearMonth) {
+  // 年月文字列が空または null の場合は空文字を返す
   if (!yearMonth) return '';
   const [year, month] = yearMonth.split('-');
   return `${year}年${parseInt(month, 10)}月`;

@@ -10,20 +10,24 @@ import { ERROR_CODES } from '../constants/code-definitions.js';
 export function validateRecord({ date, type, category, amount }) {
   const errors = [];
 
+  // 日付が空、または YYYY-MM-DD 形式でない場合はエラーを追加する
   if (!date || !/^\d{4}-\d{2}-\d{2}$/.test(date)) {
     errors.push(ERROR_CODES.INVALID_DATE);
   }
 
+  // 種別が空、または定義済みの種別コードに含まれない場合はエラーを追加する
   if (!type || !Object.values(RECORD_TYPES).includes(type)) {
     errors.push(ERROR_CODES.INVALID_TYPE);
   }
 
   const allCategories = [...INCOME_CATEGORIES, ...EXPENSE_CATEGORIES];
+  // カテゴリが空、または定義済みカテゴリに含まれない場合はエラーを追加する
   if (!category || !allCategories.includes(category)) {
     errors.push(ERROR_CODES.MISSING_CATEGORY);
   }
 
   const num = Number(amount);
+  // 金額が空・数値でない・0以下・整数でない場合はエラーを追加する
   if (!amount || isNaN(num) || num <= 0 || !Number.isInteger(num)) {
     errors.push(ERROR_CODES.INVALID_AMOUNT);
   }
@@ -36,11 +40,13 @@ export function validateBudget({ category, limit }) {
   const errors = [];
 
   const allCategories = [...INCOME_CATEGORIES, ...EXPENSE_CATEGORIES];
+  // カテゴリが空、または定義済みカテゴリに含まれない場合はエラーを追加する
   if (!category || !allCategories.includes(category)) {
     errors.push(ERROR_CODES.MISSING_CATEGORY);
   }
 
   const num = Number(limit);
+  // 予算上限が数値でない・負の値・整数でない場合はエラーを追加する
   if (isNaN(num) || num < 0 || !Number.isInteger(num)) {
     errors.push(ERROR_CODES.INVALID_AMOUNT);
   }

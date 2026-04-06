@@ -22,6 +22,7 @@ export class ChartManager {
     const labels = Object.keys(categoryData);
     const data   = Object.values(categoryData);
 
+    // チャートが既に生成済みの場合はデータのみ差分更新して再描画する
     if (this.chart) {
       this.chart.data.labels = labels;
       this.chart.data.datasets[0].data = data;

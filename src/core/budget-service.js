@@ -48,10 +48,12 @@ export class BudgetService {
   // 指定 ID のレコードを更新する
   updateRecord(id, data) {
     const errors = validateRecord(data);
+    // バリデーションエラーが1件以上あれば例外を投げる
     if (errors.length > 0) throw new Error(errors.join(','));
 
     const records = this.storage.getRecords();
     const index = records.findIndex(r => r.id === id);
+    // 指定 ID のレコードが一覧に存在しない場合はエラーを投げる
     if (index === -1) throw new Error('Record not found');
 
     records[index] = {
