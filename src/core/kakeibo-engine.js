@@ -105,12 +105,12 @@ export class KakeiboEngine {
     document.getElementById('total-balance').textContent = formatCurrency(balance);
   }
 
-  // 収支一覧を描画する
+  // 収支一覧を描画する。records-empty は records-list の外側に置いて
+  // innerHTML の上書きで消えないようにしている
   _renderRecords(records) {
     const list  = document.getElementById('records-list');
     const empty = document.getElementById('records-empty');
 
-    // レコードが0件の場合は空状態メッセージを表示して早期リターンする
     if (records.length === 0) {
       list.innerHTML = '';
       empty.hidden = false;
