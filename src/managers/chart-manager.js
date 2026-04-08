@@ -44,6 +44,7 @@ export class ChartManager {
       },
       options: {
         responsive: true,
+        animation: { duration: 0 },
         plugins: {
           legend: {
             position: 'bottom',
